@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tertiary-fixed: #cae6ff;
+  --color-on-tertiary: #ffffff;
+  --color-surface-container-low: #f3f4f5;
+  --color-on-primary-fixed-variant: #384378;
+  --color-surface-variant: #e1e3e4;
+  --color-primary-fixed: #dde1ff;
+  --color-inverse-on-surface: #f0f1f2;
+  --color-on-primary-fixed: #08164b;
+  --color-secondary-container: #90efef;
+  --color-surface-bright: #f8f9fa;
+  --color-on-error-container: #93000a;
+  --color-error: #ba1a1a;
+  --color-surface-tint: #505b92;
+  --color-primary-fixed-dim: #b9c3ff;
+  --color-on-tertiary-container: #5e9cc9;
+  --color-tertiary: #001b2c;
+  --color-outline-variant: #c6c5d1;
+  --color-primary: #061449;
+  --color-inverse-surface: #2e3132;
+  --color-outline: #767680;
+  --color-error-container: #ffdad6;
+  --color-secondary-fixed: #93f2f2;
+  --color-on-error: #ffffff;
+  --color-surface-container-high: #e7e8e9;
+  --color-on-secondary-fixed: #002020;
+  --color-surface-container-highest: #e1e3e4;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-background: #191c1d;
+  --color-tertiary-container: #00314b;
+  --color-on-primary-container: "#8793cd";
+  --color-on-primary: #ffffff;
+  --color-on-secondary-container: #006e6e;
+  --color-primary-container: #1e2a5e;
+  --color-on-tertiary-fixed: #001e30;
+  --color-surface-container: #edeeef;
+  --color-surface-dim: #d9dadb;
+  --color-on-tertiary-fixed-variant: #004b70;
+  --color-tertiary-fixed-dim: #90cdfd;
+  --color-secondary-fixed-dim: #76d6d5;
+  --color-inverse-primary: #b9c3ff;
+  --color-on-surface: #191c1d;
+  --color-on-secondary: #ffffff;
+  --color-background: #f8f9fa;
+  --color-surface: #f8f9fa;
+  --color-on-surface-variant: #45464f;
+  --color-secondary: #006a6a;
+  --color-on-secondary-fixed-variant: #004f4f;
+
+  --font-headline: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
+
+  --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+  --animate-reveal-card: reveal-card 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+
+  @keyframes fade-in-up {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes reveal-card {
+    0% { opacity: 0; transform: scale(0.95) translateY(30px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  @keyframes cc-page-enter {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+}
+
+body, html, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  z-index: 10;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+.glass-panel {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+
+.cc-page-enter {
+  animation: cc-page-enter 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: opacity, transform;
+}
